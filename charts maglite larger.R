@@ -46,6 +46,16 @@ sxs <-c("Pain", "Blisters, erosions, scabs", "Persistent rash", "Discoloration",
 legpal <- magma(7, alpha=1, begin=0.2, end=1, direction=-1)
 legend("topright", sxs, fill=legpal, cex=1.4)
 
+# Sx by PPE barplot ORDERED magma lite larger font
+par(mar=c(5.1,5, 4.1, 2.1))
+pal <- magma(7, alpha = 1, begin = 0.2, end = 1)
+df <- data.frame(N95=c(251,151,56,87,31,44,137), SurgMask=c(182,148,9,30,25,24,63), FaceShield=c(116,49,19,20,4,9,96), Gloves=c(78,84,1,10,22,6,9), Gown=c(22,27,0,2,9,2,3), Glasses=c(18,8,3,4,0,2,13))
+colnames(df) <- c("N95", "Surg. Mask", "Shield", "Gloves", "Gown", "Eyewear")
+barplot(as.matrix(df), main="Symptoms by PPE Type", xlab="PPE", ylab="Complaints", ylim=c(0,900), col=pal, cex.axis=1.6, cex.lab=1.6, cex.names=1.3, cex.main=1.6)
+sxs <-c("Pain", "Blisters, erosions, scabs", "Persistent rash", "Discoloration", "Bruising", "Itching", "Redness")
+legpal <- magma(7, alpha=1, begin=0.2, end=1, direction=-1)
+legend("topright", sxs, fill=legpal, cex=1.4)
+
 # Dx Horizontal stacked magma lite inverse larger font
 par(mar=c(5.1, 12, 4.1, 3.1))
 pal <- magma(3, alpha = 1, begin = 0.5, end = 1, direction=-1)
